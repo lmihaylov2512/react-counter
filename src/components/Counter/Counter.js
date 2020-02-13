@@ -1,16 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 
-const Counter = (props) => {
-    const [count, setCount] = useState(props.start || 0);
-
-    const handleBtnClick = (event) => {
-        setCount(count + 1);
-    };
-
+const Counter = ({count, handleBtnClick}) => {
     return (
         <div>
             <h2 className="counter">{count}</h2>
-            <button className="counter-button" onClick={handleBtnClick}>Click</button>
+            <button className="counter-button" onClick={() => { handleBtnClick(count + 1) }}>Click</button>
         </div>
     );
 };
